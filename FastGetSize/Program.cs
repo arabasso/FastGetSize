@@ -78,7 +78,9 @@ namespace FastGetSize
             long size,
             string unit)
         {
-            var units = new[] { "B", "KB", "MB", "GB", "TB" };
+            if (unit == "N") return size.ToString();
+
+            var units = new[] { "B", "K", "M", "G", "T" };
 
             double s = size;
             var index = 0;
